@@ -3,6 +3,7 @@ package com.myproject.warehouse.controller;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.GetMapping;
+import org.springframework.web.bind.annotation.PostMapping;
 
 import com.myproject.warehouse.domain.Product;
 import com.myproject.warehouse.service.ProductService;
@@ -17,10 +18,29 @@ public class WarehouseController {
 		this.productService = productService;
 	}
 
+	
+	@PostMapping("/home")
+	public String addProduct(Model model, Product product) {
 
+		Integer result = productService.addProduct(product);
 
+		if (result < 1) {
+
+			model.addAttribute("errorMessage", String.format("Can not add %s", product.getName()));
+
+		}
+
+		model.addAttribute("successMessage", String.format("Succesfully added %s", product.getName()));
+
+		Product[] products = productService.getProducts();
+
+		model.addAttribute("products", products);
+		return "home";
+	}
+
+	
 	@GetMapping("/home")
-	public String getHome(Model model) {
+	public String getHome(Model model, Product product) {
 		
 		Product[] products = productService.getProducts();
 		

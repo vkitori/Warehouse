@@ -24,8 +24,7 @@ public class ProductService {
 	
 	public int addProduct(Product product) {
 		
-		int id = productMapper.addProduct(product);
-		return id;
+		return productMapper.addProduct(product);
 		
 	}
 	

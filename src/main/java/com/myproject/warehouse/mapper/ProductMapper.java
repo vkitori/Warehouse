@@ -12,7 +12,8 @@ public interface ProductMapper {
 	@Select("SELECT * FROM PRODUCT")
 	Product[] selectProducts();
 	
-	@Insert("INSERT INTO PRODUCT (name, description, available) VALUES (#{name}, #{description}, #{available})")
+	@Insert("INSERT INTO PRODUCT (NAME, DESCRIPTION, AVAILABLE) VALUES (#{name}, #{description}, #{available})")
 	int addProduct(Product product);
+	
 
 }

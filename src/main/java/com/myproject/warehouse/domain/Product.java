@@ -14,7 +14,7 @@ public class Product {
 	private String name;
 	@Nullable
 	private String description;
-	@NonNull
+	@Nullable
 	private int available; 
 	@Nullable
 	private Timestamp createdAt;
