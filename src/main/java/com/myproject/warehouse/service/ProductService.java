@@ -18,8 +18,14 @@ public class ProductService {
 	public Product[] getProducts() {
 		
 		Product[] products = productMapper.selectProducts(); 
-		
 		return products;
+		
+	}
+	
+	public int addProduct(Product product) {
+		
+		int id = productMapper.addProduct(product);
+		return id;
 		
 	}
 	
