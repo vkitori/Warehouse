@@ -22,12 +22,27 @@ public class ProductService {
 		
 	}
 	
+	public Product getProductById(int id) {
+		
+		return productMapper.selectProductById(id);
+	}
+	
 	public int addProduct(Product product) {
 		
 		return productMapper.addProduct(product);
 		
 	}
 	
+	public int updateProductById(int id, Product product) {
+		
+        return productMapper.updateProductById(id, product);
+        
+    }
 	
+	public int deleteProductById(int id) {
+		
+        return productMapper.deleteProductById(id);
+        
+    }
 
 }
