@@ -3,9 +3,11 @@ package com.myproject.warehouse.domain;
 import java.sql.Timestamp;
 import java.time.Instant;
 
+import org.springframework.boot.autoconfigure.domain.EntityScan;
 import org.springframework.lang.NonNull;
 import org.springframework.lang.Nullable;
 
+@EntityScan
 public class Product {
 	
 	@Nullable
@@ -67,7 +69,6 @@ public class Product {
 	public void setCreatedAt(Timestamp createdAt) {
 		this.createdAt = createdAt;
 	}
-	
 	
 	
 
