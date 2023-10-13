@@ -20,7 +20,7 @@ This project is built using the following technologies and tools:
 - **Eclipse**
 
 
-###Features
+### Features
 
 - View a list of products in the warehouse.
 - Add new products with details such as name, description, and availability.
