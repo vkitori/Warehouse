@@ -15,7 +15,6 @@ public class WarehouseController {
 	private ProductService productService;
 	
 	public WarehouseController(ProductService productService) {
-		super();
 		this.productService = productService;
 	}
 

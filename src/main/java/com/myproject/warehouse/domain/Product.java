@@ -22,7 +22,6 @@ public class Product {
 	private Timestamp createdAt;
 	
 	public Product(Integer id, String name, String description, int available, Timestamp createdAt) {
-		super();
 		this.id = id;
 		this.name = name;
 		this.description = description;
