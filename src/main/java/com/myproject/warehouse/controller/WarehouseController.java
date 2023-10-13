@@ -3,7 +3,6 @@ package com.myproject.warehouse.controller;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.GetMapping;
-import org.springframework.web.bind.annotation.PatchMapping;
 import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.PostMapping;
 
@@ -40,13 +39,19 @@ public class WarehouseController {
 		return "home";
 	}
 	
-	@PatchMapping("/edit/{id}")
-	public String updateProduct(Model model, @PathVariable("id") int id,  Product product) {
+	/*@GetMapping("/edit/{id}")
+	public String edit(@PathVariable("id") int id, Model model) {
+	    Product product = productService.getProductById(id);
+	    model.addAttribute("editProduct", product);
+	    return "editProduct";
+	}*/
+	
+	@PostMapping("/update")
+	public String update(Model model, Product product) {
+		
 
-		//Product editProduct = productService.getProductById(id);
-
-		//model.addAttribute("product", editProduct);
-		return "home";
+		productService.updateProductById(product);
+		return "redirect:/home";
 	}
 
 	@GetMapping("/delete/{id}")

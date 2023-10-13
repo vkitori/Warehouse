@@ -33,9 +33,9 @@ public class ProductService {
 		
 	}
 	
-	public int updateProductById(int id, Product product) {
+	public int updateProductById(Product product) {
 		
-        return productMapper.updateProductById(id, product);
+        return productMapper.updateProductById(product);
         
     }
 	

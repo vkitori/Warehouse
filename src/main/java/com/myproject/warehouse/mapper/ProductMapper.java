@@ -20,11 +20,10 @@ public interface ProductMapper {
 	@Insert("INSERT INTO PRODUCT (NAME, DESCRIPTION, AVAILABLE) VALUES (#{name}, #{description}, #{available})")
 	int addProduct(Product product);
 	
-	@Update("UPDATE PRODUCT NAME = #{name}, DESCRIPTION = #{description}, AVAILABLE = #{available} WHERE ID = #{id}")
-	int updateProductById(int id, Product product);
+	@Update("UPDATE PRODUCT SET NAME = #{name}, DESCRIPTION = #{description}, AVAILABLE = #{available} WHERE ID = #{id}")
+	int updateProductById(Product product);
 	
 	@Delete("DELETE FROM PRODUCT WHERE ID = #{id}")
 	int deleteProductById(int id);
-
 
 }
