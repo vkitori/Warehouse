@@ -19,15 +19,13 @@ public class WarehouseController {
 	}
 
 	
-	@PostMapping("/home")
+	@PostMapping("/index")
 	public String addProduct(Model model, Product product) {
 
 		Integer result = productService.addProduct(product);
 
 		if (result < 1) {
-
 			model.addAttribute("errorMessage", String.format("Can not add %s", product.getName()));
-
 		}
 
 		model.addAttribute("successMessage", String.format("Succesfully added %s", product.getName()));
@@ -35,7 +33,7 @@ public class WarehouseController {
 		Product[] products = productService.getProducts();
 
 		model.addAttribute("products", products);
-		return "home";
+		return "index";
 	}
 	
 	/*@GetMapping("/edit/{id}")
@@ -50,24 +48,24 @@ public class WarehouseController {
 		
 
 		productService.updateProductById(product);
-		return "redirect:/home";
+		return "redirect:/index";
 	}
 
 	@GetMapping("/delete/{id}")
 	public String deleteProduct(Model model, @PathVariable("id") int id) {
 		
 		productService.deleteProductById(id);
-		return "redirect:/home";
+		return "redirect:/index";
 	}
 	
-	@GetMapping("/home")
-	public String getHome(Model model, Product product) {
+	@GetMapping("/index")
+	public String getindex(Model model, Product product) {
 		
 		Product[] products = productService.getProducts();
 		
 		model.addAttribute("products", products);
 		
-		return "home";
+		return "index";
 	}
 
 }

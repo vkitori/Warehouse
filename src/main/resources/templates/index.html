@@ -22,7 +22,7 @@
 						<th scope="col">Name</th>
 						<th scope="col">Description</th>
 						<th scope="col">Available</th>
-						<th scope="col">Created date</th>						
+						<th scope="col">Created date</th>
 						<th scope="col">Delete</th>
 					</tr>
 				</thead>
@@ -40,12 +40,14 @@
 					</tr>
 				</tbody>
 			</table>
-			<button type="button" class="btn btn-primary" data-bs-toggle="modal"
-				data-bs-target="#exampleModal">Add product</button>
-			<button type="button" class="btn btn-primary" data-bs-toggle="modal"
-				data-bs-target="#editingModal">Update product</button>
-			<div th:if="${successMessage}" th:text="${successMessage}"></div>
-			<div th:if="${errorMessage}" th:text="${errorMessage}"></div>
+			<div th:if="${successMessage}" th:text="${successMessage}" class="alert alert-success" role="alert"></div>
+			<div th:if="${errorMessage}" th:text="${errorMessage}" class="alert alert-danger" role="alert"></div>
+			<div>
+				<button type="button" class="btn btn-primary" data-bs-toggle="modal"
+					data-bs-target="#exampleModal">Add product</button>
+				<button type="button" class="btn btn-primary" data-bs-toggle="modal"
+					data-bs-target="#editingModal">Update product</button>
+			</div>
 		</div>
 	</div>
 	<!--Modal for adding-->
@@ -60,7 +62,7 @@
 						aria-label="Close" id="close"></button>
 				</div>
 				<div class="modal-body">
-					<form th:object="${product}" th:action="@{/home}" th:method="POST"
+					<form th:object="${product}" th:action="@{/index}" th:method="POST"
 						id="addForm">
 						<div class="mb-3">
 							<label for="name" class="col-form-label">Name:</label> <input
@@ -106,7 +108,7 @@
 							<label for="id" class="col-form-label">Id:</label> <input
 								type="text" th:field="*{id}" name="id" class="form-control"
 								id="name">
-						</div>					
+						</div>
 						<div class="mb-3">
 							<label for="name" class="col-form-label">Name:</label> <input
 								type="text" th:field="*{name}" name="name" class="form-control"
